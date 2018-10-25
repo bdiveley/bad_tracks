@@ -1,0 +1,9 @@
+<%= @artist.name  %>
+
+<% if !@songs.empty? %>
+  <% @songs.each do |song| %>
+    <%= song.title %>
+    <%= song.length %>
+    <%= song.play_count %>
+  <% end %>
+<% end  %>

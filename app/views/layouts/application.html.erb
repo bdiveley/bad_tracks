@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BadTracks</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <% flash.each do |type, message| %>
+    <%= content_tag :div, message, class: type %>
+    <% end %>
+
+    <% if @breadcrumbs %>
+      <p> Last pages visited: </p>
+      <% @breadcrumbs.flatten.each do |b| %>
+        <%= link_to b, b %>
+      <% end %>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>
